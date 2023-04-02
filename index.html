@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="dark" data-mode="dark" data-systemmode="dark" lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link href="./index_files/s.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Hugo 0.81.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ccextractor.org/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ccextractor.org/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://ccextractor.org/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://ccextractor.org/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://ccextractor.org/favicons/safari-pinned-tab.svg" color="#004750">
+    <link rel="shortcut icon" href="https://ccextractor.org/favicons/favicon.ico">
+    <meta name="msapplication-config" content="https://ccextractor.org/favicons/browserconfig.xml">
+    <title>GSoC Proposal - Rohit Garg</title>
+    <link rel="stylesheet" href="index_files/styles.1ab21acca1604db7cec5c6ec6945b5538a213f0e2815df048f039.css">
+</head>
+
+<body class="page-page" id="pagetop">
+    <header class="nav_header">
+        <nav class="new-nav-2"><a target="_blank" href="https://ccextractor.org/" class="nav_brand">
+                <picture data-lit="https://ccextractor.org/images/ccx.svg"
+                    data-dark="https://ccextractor.org/images/ccx.svg">
+                    <source srcset="index_files/ccx.svg 1x" media="(prefers-color-scheme: dark)"><img
+                        srcset="index_files/ccx.svg 1x" alt="CCExtractor Logo" loading="lazy">
+                </picture>
+                <label class="nav_toggle toggle" title="Site Menu" role="button"><svg class="icon icon_harmburger">
+                        <use xlink:href="#harmburger"></use>
+                    </svg></label>
+            </a>
+            <div class="flex-1"></div>
+            <ul class="new-nav">
+                <li class="nav-item nav_repo"><a class="nav-link" href="https://github.com/lilmistake" target="_blank"
+                        rel="noopener">
+                        <picture data-dark="https://ccextractor.org/images/GitHubMarkDark.svg">
+                            <source srcset="index_files/GitHubMarkDark.svg 1x" media="(prefers-color-scheme: dark)">
+                            <img srcset="index_files/GitHubMarkLight.svg 1x" alt="GitHub Profile" loading="lazy">
+                        </picture>
+                    </a>
+                </li>
+                <li class="nav-item nav_repo"><a class="nav-link" href="https://rhccgsoc15.slack.com/team/U04R70AR2N9"
+                        target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-slack" viewBox="0 0 16 16">
+                            <path
+                                d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item nav_repo"><a class="nav-link" href="mailto:rasinrohit@gmail.com" target="_blank"
+                        rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main wrap pt-4">
+        <div class="grid-auto">
+            <aside class="aside menu">
+                <div>
+                    <label class="aside_toggle toggle" title="Docs Menu" role="button">
+                        <h5 style="margin-top: 1rem;">Menu</h5>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16" style="margin-right:2rem; margin-top: 2rem">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </label>
+                </div>
+                <section class="section aside_inner">
+
+                    <section id="docs-docs">
+                        <h3 class="section_link"><a id="docs-google-summer-of-code-gsoc-2023-ideas-page---classics"
+                                href="#">Google Summer of Code (GSoC) 2023
+                                proposal</a></h3>
+                        <h3 class="section_link active"><a id="docs-google-summer-of-code-gsoc-2023-ideas-page"
+                                href="#introduction">Introduction</a></h3>
+                        <h3 class="section_link active"><a id="docs-google-summer-of-code-gsoc-2023-ideas-page"
+                                href="#about-project">About Project</a></h3>
+                        <nav id="" class="toc toc_active">
+                            <ul>
+                                <li class="toc_item">
+                                    <ul class="toc_link">
+                                        <li><a href="#what-i-will-do" data-position="168">What I will do - Abstract
+                                            </a>
+                                        </li>
+                                        <li><a href="#when" data-position="15374">When -
+                                                Project Timeline</a>
+                                        </li>
+                                        <li><a href="#how" data-position="15374">How -
+                                                Detailed Approach</a>
+                                        </li>
+                                        <li><a href="#what-i-did" data-position="15374">What I did -
+                                                Qualification tasks</a>
+                                        </li>
+                                        <li><a href="#why-i-want-this-project" data-position="15374">Why this
+                                                project</a>
+                                        </li>
+                                        <li><a href="#why-me" data-position="15374">Why me</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </nav>
+                        <h3 class="section_link active"><a id="docs-google-summer-of-code-gsoc-2023-ideas-page"
+                                href="#about-me">About Me</a></h3>
+                    </section>
+                </section>
+            </aside>
+            <main class="content">
+                <h1>Google Summer of Code 2023 Project Proposal</h1>
+                <hr>
+                <div class="" id="introduction">
+                    <h2>Introduction</h2>
+                    Welcome to my proposal, I am Rohit, a first year student of Greater Noida Institute of Technology
+                    persuing my degree in Bachelor's of Technology. I will try my best to keep information as short as
+                    possible while also explaining why I'd be a good candidate for this project.
+                    <div class="indent">
+                        <ul>
+                            <li>Name: Rohit Garg</li>
+                            <li>Email: rasinrohit@gmail.com</li>
+                            <li>GitHub: lilmistake</li>
+                            <li>Slack: Rohit Garg</li>
+                            <li>Location: Noida, India</li>
+                            <li>College: Greater Noida Institute of Technology, Greater Noida</li>
+                        </ul>
+                    </div>
+                    <p>
+                        I've discussed some more about myself at the <a href="#about-me">end</a>
+                    </p>
+                </div>
+                <h2 id="about-project">About Project - It's Urgent</h2>
+                <div class="indent">
+                    <ul>
+
+                        <li>Mentor: Akshat Tripathi</li>
+                        <li>Description: Create a Flutter app that helps users priorotize their task, and make sure
+                            no
+                            important notification is missed.</li>
+                    </ul>
+                </div>
+                <h3 id="what-i-will-do">What I will do - Abstract</h3>
+                During the course of this project I will develop a Flutter application with Firebase as backend that
+                enable users to decide weather or not they want to be disturbed, while still not missing
+                very important communications.
+
+                <p>
+                    The app will work in a messaging app's fashion except that communications cannot be carried out on
+                    the app like a messaging platform.
+                </p>
+                <ol type="a" class="indent-grey">
+                    <li>Users sync contacts</li>
+                    <li>Set their current status from <kbd>avaiable</kbd> <kbd>busy</kbd> and <kbd>dnd</kbd>
+                    <li>Set a challenge that must be completed inorder to send notification</li>
+                    <li>Select a user from their contact list to call</li>
+                    <li>Fulfill their challenge (if any)</li>
+                    <li>Convey the very important message</li>
+                </ol>
+                <p>
+                    Apart from that, I would like to implement the following ideas:
+                <ul>
+                    <li>
+                        A feature to schedule meeting for sometime in future with a user
+                    </li>
+                    <li>
+                        Automatically set user status based on location and/or time
+                    </li>
+                </ul>
+                </p>
+
+                <h3 id="when">When - Project Timeline</h3>
+                <p>
+                    Since this project hasn't been worked upon yet, during the application review and community bonding
+                    period I will discuss project goals with the mentors and their expectations.<br> I will do the same
+                    throughout the course of this project to make sure team is aware of the progress of the project. I
+                    will also gather their feedback to make sure the end product is ideal.
+                </p>
+                <p>
+                    I will take my time learning more about Software Architecture and system security to produce a
+                    scalable, modular piece of tech.
+                </p>
+                <div class="rb-container flex">
+
+                    <ul class="rb">
+                        <li ng-repeat="itembx">
+                            <div class="week">
+                                Week 1<br>29 May - 4 June
+                            </div>
+                            <div class="item-title">
+                                ‣ Plan app's core features and user flow<br>
+                                ‣ Create basic UI prototype<br>
+                                ‣ Plan database architecture<br>
+                            </div>
+
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 2<br>5 June - 11 June
+                            </div>
+                            <div class="item-title">
+                                ‣ Setting up Firebase cloud firestore and cloud messaging for notifications<br>
+                                ‣ Adding Authentication by Gmail, Email-password and Phone number
+                            </div>
+
+                        </li>
+
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 3<br>12 June - 18 June
+                            </div>
+                            <div class="item-title">
+                                ‣ Syncing contacts with account<br>
+                                ‣ Adding functionality to set status<br>
+                            </div>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 4<br>19 June - 25 June
+                            </div>
+                            <div class="item-title">
+                                ‣ Implementing creating challenge/password<br>
+                                ‣ Adding feature to send call request if user avaialble
+                            </div>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 5<br>26 June - 2 July
+                            </div>
+
+                            <div class="item-title">
+                                ‣ Adding functionality to set priority while requesting call<br>
+                                ‣ Implementing way to solve challenge
+                            </div>
+                        </li>
+
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 6<br>3 July - 9 July
+                            </div>
+                            <div class="item-title">
+                                Complete mid-term evaluation and work upon the feedback accordingly.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="rb">
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 7<br>10 July - 16 July
+                            </div>
+                            <div class="item-title">
+                                ‣ Adding feature to send meeting request with timing<br>
+                                ‣ Add way to accept or reject them.
+                            </div>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 8<br>17 July - 23 July
+                            </div>
+                            <div class="item-title">
+                                ‣ Scheduling a cron job to check for meetings, and send
+                                out notifications accordingly
+                            </div>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 9<br>24 July - 30 July
+                            </div>
+                            <div class="item-title">
+                                ‣ Getting feedback from mentors and working upon them<br>
+                                ‣ Conducting refactoring and testing<br>
+                                ‣ Writing documentation, user manual and developer guide.<br>
+                            </div>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 10<br>31 July - 6 August
+                            </div>
+                            <div class="item-title">
+                                ‣ Adding feature to automatically set do-not-disturb mode based on location or time<br>
+                            </div>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 11<br>7 August - 13 August
+                            </div>
+                            <div class="item-title">
+                                ‣ Completing all remaining tasks (in case any)<br>
+                                ‣ Refining the UI, improving the UX, and testing security of the app<br>
+                            </div>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <div class="week">
+                                Week 12<br>14 August - 21 August
+                            </div>
+                            <div class="item-title">
+                                ‣ Wrapping up the project, and evaluation by mentors<br>
+                                ‣ Finalizing documentation and guide for the app<br>
+                                ‣ Release the app on Google Play Store
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <h2 id="how">How - Detailed Approach</h2>
+                <div class="indent-grey-2">
+                    <h3>Week 1</h3>
+                    <p>In the first week I will plan and discuss the app's core features with mentors. I will also
+                        create a
+                        basic UI mockup and plan a database architecture which suits best for this usecase. My database
+                        of
+                        choise will be Firebase Firestore as it offers seemless integration with any flutter project
+                        and is
+                        fairly scaleable with a generous free tier.</p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 2</h3>
+                    <p>For week 2 I will be setting up firebase cloud messaging for sending notifications to users
+                        whenever
+                        someone needs to contact them.
+                        I will add 3 ways of Authentication for the app, Google Auth, Email and Password, and Phone
+                        number.
+                    </p>
+                    <p>
+                        All three of these will be stored in a different collection called Auth with structure that's
+                        similar to this illustration I made:<br>
+
+                        <img src="https://i.imgur.com/O6eCTYU.png" width="600px">
+                        <br>Here Auth and Data are two database collections.
+                        Auth has 3 sub-collections, each storing authentication data. A key, mapping to a usrId.
+                        On the other hand, the Data collection has documents with usrId as their IDs.<br>
+
+                        After authenticating, we can access a user's data using their secret ID. This also keeps their
+                        data
+                        private and secure.
+
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>
+                        Week 3
+                    </h3>
+                    <p>
+                        In Week 3 I will implement a 'Find friends' feature where user can sync their contacts and we
+                        will
+                        check who in their contact list is using the app. We can then store this list in local storage
+                        to
+                        maintain privacy and reduce storage on our firestore.
+                    </p>
+                    <p>I will implement a system like of WhatsApp's. It shows recent conversation on opening app. These
+                        will
+                        be the contacts in our local storage. With a seperate FAB to view all other, at which point we
+                        will
+                        go through the entire contact list to check for users on the app.</p>
+                    <p>
+                        Also I will add a way to set status from avaialble, busy and dnd and store it in firestore.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>
+                        Week 4
+                    </h3>
+                    <p>
+                        For week 4, I have planned to implementing the setting a challenge feature. This will be
+                        avaialble
+                        from settings of app, and can be a password, passphrase or a math operation etc. Along with
+                        that, I will add feature
+                        to
+                        send notification to users to contact them using Cloud Messaging.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 5</h3>
+                    <p>
+                        Now user will be able to set the priority of their Notification from low, medium to high. Along
+                        with
+                        that I will implement a way to solve challenges, now user will have to solve challenge before
+                        contacting if the user is in DND mode.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 6</h3>
+                    <p>
+                        Week 6 won't be seeing a lot of new progress, I will self evaluate the app as well as submit it
+                        for
+                        evaluation by mentors and work upon their feedback. By this point the app will have a basic
+                        version
+                        ready which has been planned orignally.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 7</h3>
+                    <p>
+                        In Week 7, I will be adding a feature to send a meeting request for sometime in future. The
+                        other
+                        user will be able to accept or reject this request by the end of this week.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 8</h3>
+                    <p>
+                        I will now create a cron job, that will check for elegible scheduled
+                        meetings. If any exist, notifications will be sent out to both people using Firebase Cloud
+                        Messaging.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 9</h3>
+                    <p>
+                        In this week I will perform self evaluation, ask mentors for their feedback and suggestions. I
+                        will
+                        also refactor the code as necessary and write the documentation, user manual and developer guide
+                        in
+                        this week.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 10</h3>
+                    <p>
+                        For week 10 I will be adding a feature insipired by Ultimate Alarm Clock. I will implement a
+                        feature
+                        to automatically set status based on location and time. We will need user's GPS access for this.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 11</h3>
+
+                    <p>
+                        Week 11 will be dedicated to improvement and testing. I will also complete any remaining tasks
+                        from
+                        previous weeks. I will also be working upon documentation and guide in this week.
+                        The UI will be refined, with appropriate graphics, the UX will be improved and security tested.
+                    </p>
+                </div>
+                <div class="indent-grey-2">
+                    <h3>Week 12</h3>
+                    <p>
+                        In Week 12, the final week for the project, I will be wrapping up the project with feedback from
+                        mentors and improving upong them. Finalizing the documentation and releasing the app on Google
+                        Play
+                        Store
+                    </p>
+                </div>
+                <h2 id="what-i-did">What I did - Qualification tasks</h2>
+                <div class="indent-grey">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-github"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    <a href="https://github.com/lilmistake/finder" target="_blank">Created a Flutter smart zoom
+                        application
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                            class="bi bi-box-arrow-up-right" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                            <path fill-rule="evenodd"
+                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                        </svg>
+                    </a>
+                    <br>
+                    Created a Flutter Application with MobileNet SSD tflite model which takes pictures,
+                    and detects objects in the image. The user can then select object form list of detections and save
+                    it accordingly<br>
+                    <img src='https://user-images.githubusercontent.com/61899816/229372051-3a8754b2-0ddd-4d60-b385-8dbd3fc3b646.png'
+                        width="25%"><img
+                        src='https://user-images.githubusercontent.com/61899816/229372057-6cb7e1c1-c547-4f44-8b1f-e42ff91d98a0.png'
+                        width="25%"><img
+                        src='https://user-images.githubusercontent.com/61899816/229372063-9ce06204-90f1-48db-ac01-7e4960285d67.png'
+                        width="25%"><img
+                        src='https://user-images.githubusercontent.com/61899816/229372069-0e1d448b-79ef-4092-8642-922f145c2006.png'
+                        width="25%">
+                </div>
+                <div class="indent-grey">
+                    <a target="_blank" href="https://github.com/CCExtractor/ccextractorfluttergui">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-github"
+                            viewBox="0 0 20 20">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        Fixed overflow problems in CCXFlutterGUI repository <svg xmlns="http://www.w3.org/2000/svg"
+                            width="15" height="15" fill="currentColor" class="bi bi-box-arrow-up-right"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                            <path fill-rule="evenodd"
+                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                        </svg>
+                    </a>
+                    <br>
+                    While scrolling accross CC Extractor's Flutter GUI I noticed some overflow problems which I fixed
+                    through these 3 PRs
+                    <div class="indent-purple">
+                        <a target="_blank" href="https://github.com/CCExtractor/ccextractorfluttergui/pull/51"
+                            style="color:#a371f7">
+                            <svg style="fill: #a371f7;" title="Merged" viewBox="0 0 16 16" version="1.1" width="16"
+                                height="16" aria-hidden="true">
+                                <path
+                                    d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z">
+                                </path>
+                            </svg>
+                            Navigation Rail
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                                class="bi bi-box-arrow-up-right" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                <path fill-rule="evenodd"
+                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                            </svg>
+                        </a>
+                        <br>
+                    </div>
+                    Fixed overflow problem in Navigation rail by wrapping in Single Child Scroll View Widget and
+                    Intrinsic Height. Also improved how application version and update button are shown.
+
+                    <table>
+
+                        <head>
+                            <th>
+                                Before
+                            </th>
+                            <th>
+                                After
+                            </th>
+                        </head>
+                        <tr>
+
+                            <td>
+                                <img src="https://i.imgur.com/3xoYN3V.png">
+                            </td>
+                            <td>
+                                <img src="https://i.imgur.com/2c0WfKu.jpg">
+                            </td>
+
+                        </tr>
+                    </table>
+
+                    <div class="indent-purple">
+                        <a target="_blank" href="https://github.com/Techno-Disaster/navigation_rail/pull/3"
+                            style="color:#a371f7">
+                            <svg style="fill: #a371f7;" title="Merged" viewBox="0 0 16 16" version="1.1" width="16"
+                                height="16" aria-hidden="true">
+                                <path
+                                    d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z">
+                                </path>
+                            </svg>
+                            Bottom Navigation
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                                class="bi bi-box-arrow-up-right" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                <path fill-rule="evenodd"
+                                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                            </svg>
+                        </a>
+
+
+                    </div>
+                    Fixed text overflow problem in bottom navigation by removing redundant text
+                    <table>
+
+                        <head>
+                            <th>
+                                Before
+                            </th>
+                            <th>
+                                After
+                            </th>
+                        </head>
+                        <tr>
+
+                            <td>
+                                <img src="https://i.imgur.com/ENwFYOB.png">
+                            </td>
+                            <td>
+                                <img src="https://i.imgur.com/tU5dbqp.png">
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="indent-grey">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-github"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    <a target="_blank" href="https://github.com/lilmistake/ccxitsurgent">
+                        Created my own repository for 'itsUrgent'
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                            class="bi bi-box-arrow-up-right" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                            <path fill-rule="evenodd"
+                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                        </svg>
+                    </a>
+                    <p>
+                        Since this is a new project, I created my own repository and implemented the following
+                    <ul>
+                        <li>A three page UI, <kbd>Contacts</kbd> <kbd>notification</kbd> and <kbd>Settings</kbd> </li>
+                        <li>Theme system with light and dark theme</li>
+                        <li>Models and enums for, <kbd>Users</kbd> <kbd>Notifications</kbd> <kbd>Status</kbd> and
+                            <kbd>Priority</kbd>
+                        </li>
+                        <li>User Profiles and Notification Dialogs</li>
+                    </ul>
+                    <img src="https://user-images.githubusercontent.com/61899816/228422590-d9751fc4-13b4-4e86-8bf9-30c3c886a966.png"
+                        width="20%" alt="progress screenshot"><img
+                        src="https://user-images.githubusercontent.com/61899816/228329164-1c4c337a-222d-4afc-a4f1-ff59e241120e.png"
+                        width="20%" alt="progress screenshot"><img
+                        src="https://user-images.githubusercontent.com/61899816/228422597-cf759a19-d9df-4a46-822a-0fa22f62c438.png"
+                        width="20%" alt="progress screenshot"><img
+                        src="https://user-images.githubusercontent.com/61899816/228329154-7789de29-b3e8-4751-b942-073f56ce57b5.png"
+                        width="20%" alt="progress screenshot"><img
+                        src="https://user-images.githubusercontent.com/61899816/226570889-f47f1c1a-a218-4738-a9e5-5a3ff93b3e65.png"
+                        width="20%" alt="progress screenshot">
+
+                    </p>
+                </div>
+
+
+
+                <h2 id="why-i-want-this-project">Why this project</h2>
+                <p>
+                    For GSoC'2023, I was looking for a project with Flutter and Firebase since I really enjoy working on
+                    those
+                    technologies. After looking through multiple organizations and projects, the one I liked the most
+                    was, CC
+                    Extractor's It's Urgent project.
+                </p>
+                <p>It sounds like something I'd see myself using everyday, it also is
+                    something I have been thinking of making before I saw it on GSoC. I've talked to a lot of people
+                    looking for a solution
+                    like this. So, I decided to pour all my effort in a single project instead of looking for multiple
+                    potential projects.</p>
+                <p>
+                    This project will also be very helpful for me in building a good portflio, improve communication
+                    skills and get real world experience of working on an app of this scale.
+                    Along with all other benefits, I can really use the stipend provided by GSoC right now :&#41;
+                    <br>It will bring a world of difference in my financial conditions.
+                </p>
+
+
+
+                <h2 id="why-me">Why me</h2>
+                <p>
+                    Throughout the preparation for this proposal, I've tried my best to showcase not only my
+                    understanding
+                    of the required technologies for this project but also that I am ready to put in the effort and
+                    willingness to take up any challenges that come my way. And I will continue to do so throughout the
+                    duration of this project.
+                </p>
+                <p>
+                    Instead of submitting a propsal to multiple organizations and projects, I chose to submit a single
+                    propsal to CC Extractor to direct all my effort towards it. I've also been active on slack and in
+                    touch
+                    with the mentors throughout this period, and with their guidance, I've made 4 PRs for the
+                    improvement of
+                    existing projects, completed the take-home qualification task, and created my repository for the
+                    project
+                    with basic UI and functionality.
+                </p>
+                <p>
+                    I have also documented all of my code so it is clear to anyone reading. I will document all my work
+                    on this project neatly and descriptively. I have a keen interest in learning new technologies and
+                    skills and would love to be a part of this project so I can learn more about scalability and
+                    real-world projects. I'm very enthusiastic about this project and in all, I'll put in my 100%.
+                </p>
+
+                <h2 id="about-me">About Me</h2>
+                <p>I've been coding since 8th grade as a passion, and recently started exploring Flutter and
+                    Firebase, which I really love. In past I've worked with ReactJS for web development and
+                    have some experience in game development with Python, which I used for some side projects.
+                    I also worked as a Freelancer of Fiverr.com where I developed chat bots and webpages, and
+                    through that experience I have learnt and improved upon my communication and techincal skills.
+                </p>
+                <p>
+                    I'm also excited about the perks offered by CCX, specially the educative course and the book
+                    Clean Code, I've been on a lookout for it :D<br>
+                    My first reason to get into tech was that I enjoy coding and creating stuff with it. I plan on
+                    keeping the same attitude throughout my journey. I hope to getting selected for this project, and
+                    being a worthy addition to GSoC contributors of CC
+                    Extractor team ❤️
+                </p>
+
+                <script src="index_files/bundle.min.f0d9a126c5678d331b51999905f9beddbb52852adb3010f1c9.js"></script>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- 
+
+    who i am ----- OK
+    project i will work on
+        what i will do OK 
+        when i will do OK 
+        how i will do
+        why i will do OK
+        what i did
+            take home qualification tasks OK
+            commits and prs made    OK
+            describe the app I already made 
+    why select me
+ -->
